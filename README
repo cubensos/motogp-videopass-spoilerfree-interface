@@ -1,0 +1,49 @@
+MotoGP Interface 1
+
+
+url-query strings as filters:
+file:///C:/MotoGP-Interface.html?year=2009&session=Race&raceclass=125cc
+
+
+
+add new races of the current season on your own, if i don't update the project:
+	
+	select season (https://www.motogp.com/en/videos/spoiler+free/2021)
+	open console in browser (chrome: press F12)
+	execute this javascript to get all the links to every session:
+
+	
+var x = document.querySelectorAll("a");
+var myarray = []
+for (var i=0; i<x.length; i++){
+var nametext = x[i].textContent;
+var racedate = nametext.substring(0,10);
+var nametext = nametext.substring(10,nametext.length);
+var cleantext = nametext.replace(/\s+/g, ' ').trim();
+var cleanlink = x[i].href;
+myarray.push([cleantext,cleanlink,racedate]);
+};
+function make_table() {
+	var list = '<ul>';
+   for (var i=75; i<myarray.length; i++) {
+			list += '<li><a data-racedate="' + myarray[i][2] + '" data-nametext="' + myarray[i][0] + '" href="'+ myarray[i][1] + '">' + myarray[i][1] + '</li>';
+			
+    };
+	list += "</ul>";
+	
+    var w = window.open("");
+w.document.write(list); 
+}
+make_table()
+
+
+
+	
+	a new window should open with a list of links.
+	copy-paste them to an html editor - i used https://html-online.com/editor/
+	and added the raw html into the MotoGP-Interface.html (inside the ul-list element)
+	
+	
+
+	
+	
