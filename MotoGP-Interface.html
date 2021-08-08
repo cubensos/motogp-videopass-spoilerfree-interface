@@ -80,9 +80,15 @@
 			//var nametext = a.getAttribute("data-nametext");
 			txtValue = a.textContent || a.innerText;
 			
-			if ((txtValue.indexOf(year) > -1) && (txtValue.indexOf(raceclass) > -1) && (txtValue.indexOf(racesession) > -1) && (a.getAttribute("data-nametext").indexOf("Highlights") == -1)) {
+			if (
+				((year == "*/") || (txtValue.indexOf(year) > -1)) && 
+				((raceclass == "*") || (txtValue.indexOf(raceclass) > -1)) && 
+				((racesession == "*") || (txtValue.indexOf(racesession) > -1)) && 
+				(a.getAttribute("data-nametext").indexOf("Highlights") == -1)
+			   ) {
 				li[i].style.display = "";
 			} else {
+			  
 			  li[i].style.display = "none";
 			}
 		  }
@@ -128,7 +134,7 @@
 	<br />
 	
 	<input type="hidden" id="inpSession" value="" />
-	<input type="button" class="sessionselector" value="all" onclick=filtersession('*'); />
+	<input type="button" class="sessionselector" value="all" onclick=filtersession('*');this.style.background="#bec"; />
 	<input type="button" class="sessionselector" value="Race" onclick=filtersession(this.value);this.style.background="#bec"; />
 	<input type="button" class="sessionselector" value="WUP" onclick=filtersession(this.value);this.style.background="#bec"; />
 	<input type="button" class="sessionselector" value="Q1" onclick=filtersession(this.value);this.style.background="#bec"; />
@@ -145,6 +151,28 @@
 	
 	
 	<ul id="myUL">
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/RAC/384808" data-racedate="2021-08-08" data-nametext="Full SessionsMotoGP&trade; - Race#MotoGP02:24:05">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/RAC/384808</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/RAC/384609" data-racedate="2021-08-08" data-nametext="Full SessionsMoto2&trade; - Race#Moto201:15:04">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/RAC/384609</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/RAC/384587" data-racedate="2021-08-08" data-nametext="Full SessionsMoto3&trade; - Race#Moto301:16:43">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/RAC/384587</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/WUP/384502" data-racedate="2021-08-08" data-nametext="Full SessionsMotoGP&trade; - Warm Up#MotoGP34:03">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/WUP/384502</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/WUP/384495" data-racedate="2021-08-08" data-nametext="Full SessionsMoto2&trade; - Warm Up#Moto229:43">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/WUP/384495</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/WUP/384488" data-racedate="2021-08-08" data-nametext="Full SessionsMoto3&trade; - Warm Up#Moto330:15">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/WUP/384488</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/Q2/383958" data-racedate="2021-08-07" data-nametext="Full SessionsMoto2&trade; - Qualifying Nr. 2 #Moto231:33">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/Q2/383958</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/Q1/383950" data-racedate="2021-08-07" data-nametext="Full SessionsMoto2&trade; - Qualifying Nr. 1 #Moto223:42">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/Q1/383950</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/Q2/383927" data-racedate="2021-08-07" data-nametext="Full SessionsMotoGP&trade; - Qualifying Nr. 2 #MotoGP35:26">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/Q2/383927</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/Q1/383916" data-racedate="2021-08-07" data-nametext="Full SessionsMotoGP&trade; - Qualifying Nr. 1 #MotoGP24:33">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/Q1/383916</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP4/383884" data-racedate="2021-08-07" data-nametext="Full SessionsMotoGP&trade; - Free Practice Nr. 4#MotoGP44:50">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP4/383884</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/Q2/383777" data-racedate="2021-08-07" data-nametext="Full SessionsMoto3&trade; - Qualifying Nr. 2 #Moto325:35">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/Q2/383777</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/Q1/383767" data-racedate="2021-08-07" data-nametext="Full SessionsMoto3&trade; - Qualifying Nr. 1 #Moto325:08">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/Q1/383767</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/FP3/383686" data-racedate="2021-08-07" data-nametext="Full SessionsMoto2&trade; - Free Practice Nr. 3#Moto250:00">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/FP3/383686</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP3/383618" data-racedate="2021-08-07" data-nametext="Full SessionsMotoGP&trade; - Free Practice Nr. 3#MotoGP01:03:49">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP3/383618</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/FP3/383564" data-racedate="2021-08-07" data-nametext="Full SessionsMoto3&trade; - Free Practice Nr. 3#Moto351:03">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/FP3/383564</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/FP2/383401" data-racedate="2021-08-06" data-nametext="Full SessionsMoto2&trade; - Free Practice Nr. 2#Moto251:12">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/FP2/383401</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP2/383377" data-racedate="2021-08-06" data-nametext="Full SessionsMotoGP&trade; - Free Practice Nr. 2#MotoGP01:04:51">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP2/383377</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/FP2/383332" data-racedate="2021-08-06" data-nametext="Full SessionsMoto3&trade; - Free Practice Nr. 2#Moto350:04">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/FP2/383332</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/FP1/383187" data-racedate="2021-08-06" data-nametext="Full SessionsMoto2&trade; - Free Practice Nr. 1#Moto250:49">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto2/FP1/383187</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP1/383182" data-racedate="2021-08-06" data-nametext="Full SessionsMotoGP&trade; - Free Practice Nr. 1#MotoGP01:04:04">https://www.motogp.com/en/videos/spoiler+free/2021/STY/MotoGP/FP1/383182</a></li>
+<li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/FP1/383170" data-racedate="2021-08-06" data-nametext="Full SessionsMoto3&trade; - Free Practice Nr. 1#Moto350:03">https://www.motogp.com/en/videos/spoiler+free/2021/STY/Moto3/FP1/383170</a></li>
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/NED/MotoE/RAC/381829" data-racedate="2021-06-27" data-nametext="Full SessionsMotoE&trade; - Race#MotoE41:01">https://www.motogp.com/en/videos/spoiler+free/2021/NED/MotoE/RAC/381829</a></li>
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/NED/MotoGP/RAC/381815" data-racedate="2021-06-27" data-nametext="Full SessionsMotoGP&trade; - Race#MotoGP01:41:13">https://www.motogp.com/en/videos/spoiler+free/2021/NED/MotoGP/RAC/381815</a></li>
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/NED/Moto2/RAC/381777" data-racedate="2021-06-27" data-nametext="Full SessionsMoto2&trade; - Race#Moto201:17:48">https://www.motogp.com/en/videos/spoiler+free/2021/NED/Moto2/RAC/381777</a></li>
@@ -351,6 +379,7 @@
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/QAT/MotoGP/FP1/364560" data-racedate="2021-03-26" data-nametext="Full SessionsMotoGP&trade; - Free Practice Nr. 1#MotoGP01:03:39">https://www.motogp.com/en/videos/spoiler+free/2021/QAT/MotoGP/FP1/364560</a></li>
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/QAT/Moto2/FP1/364550" data-racedate="2021-03-26" data-nametext="Full SessionsMoto2&trade; - Free Practice Nr. 1#Moto250:06">https://www.motogp.com/en/videos/spoiler+free/2021/QAT/Moto2/FP1/364550</a></li>
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2021/QAT/Moto3/FP1/364542" data-racedate="2021-03-26" data-nametext="Full SessionsMoto3&trade; - Free Practice Nr. 1#Moto354:55">https://www.motogp.com/en/videos/spoiler+free/2021/QAT/Moto3/FP1/364542</a></li>
+
 
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2020/POR/MotoGP/RAC/358848" data-racedate="2020-11-22" data-nametext="Full SessionsMotoGP&trade; - Race#MotoGP01:52:51">https://www.motogp.com/en/videos/spoiler+free/2020/POR/MotoGP/RAC/358848</a></li>
 <li><a href="https://www.motogp.com/en/videos/spoiler+free/2020/POR/Moto2/RAC/358750" data-racedate="2020-11-22" data-nametext="Full SessionsMoto2&trade; - Race#Moto201:20:03">https://www.motogp.com/en/videos/spoiler+free/2020/POR/Moto2/RAC/358750</a></li>
@@ -6134,9 +6163,13 @@
 		let year = urlParams.get('year');
 		let raceclass = urlParams.get('raceclass');
 		
-		filteryear(year);
-		filterclass(raceclass);
-		filtersession(session);
+		if (year) {filteryear(year);}
+		if (session) {filterclass(raceclass);}
+		if (raceclass) {filtersession(session);}
+		
+		
+		
+		
 	</script>
   </body>
 </html>
